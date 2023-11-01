@@ -212,3 +212,342 @@
 - Desafio: implementando endpoints de transição de status de pedidos
 - Refatorando o código de regras para transição de status de pedidos
 - Usando IDs vs UUIDs nas URIs de recursos
+
+# 13. Modelagem de projeções, pesquisas e relatórios 🚀
+- Fazendo projeção de recursos com @JsonView do Jackson
+- Limitando os campos retornados pela API com @JsonFilter do Jackson
+- Limitando os campos retornados pela API com Squiggly
+- Implementando pesquisas simples na API
+- Modelando pesquisas complexas na API
+- Implementando pesquisas complexas na API
+- Tratando BindException ao enviar parâmetros de URL inválidos
+- Implementando paginação e ordenação em recursos de coleção da API
+- Desafio: implementando paginação e ordenação de pedidos
+- Implementando JsonSerializer para customizar representação de paginação
+- Implementando um conversor de propriedades de ordenação
+- Modelando endpoints de consultas com dados agregados (ideal para gráficos e dashboards)
+- Discutindo sobre onde implementar as consultas com dados agregados
+- Implementando consulta com dados agregados de vendas diárias
+- Desafio: adicionando os filtros na consulta de vendas diárias
+- Tratando time offset na agregação de vendas diárias por data
+- Conhecendo o JasperSoft Studio
+- Criando um layout do relatório JasperReports de vendas diárias
+- Estruturando endpoint e serviço de emissão de relatório em PDF
+- Preenchendo um relatório JasperReports com JavaBeans e gerando bytes do PDF
+
+# 14. Upload e download de arquivos 📁
+- Conhecendo soluções para upload de arquivos em REST APIs
+- Implementando upload de arquivo com multipart/form-data
+- Validando o tamanho máximo do arquivo
+- Desafio: Validando o content type do arquivo
+- Mapeando entidade FotoProduto e relacionamento um-para-um
+- Implementando serviço de cadastro de foto de produto
+- Excluindo e substituindo cadastro de foto de produto
+- Implementando o serviço de armazenagem de fotos no disco local
+- Integrando o serviço de catálogo de fotos com o serviço de armazenagem
+- Implementando a remoção e substituição de arquivos de fotos no serviço de armazenagem
+- Desafio: Implementando recuperação de foto no serviço de armazenagem
+- Desafio: Implementando endpoint de consulta de foto de produto
+- Servindo arquivos de fotos pela API
+- Checando media type ao servir arquivos de fotos
+- Desafio: implementando endpoint de exclusão de foto de produto
+- Corrigindo exception handler de media type não aceita
+- Amazon S3: conhecendo o serviço de storage da AWS
+- Criando usuário com permissões para adicionar objetos na Amazon S3
+- Criando chaves de acesso para a API da AWS
+- Criando bean de propriedades de configuração dos serviços de storage
+- Adicionando o SDK Java da Amazon S3 no projeto e criando a classe da implementação do serviço de storage
+- Definindo bean do client da Amazon S3 e configurando credenciais
+- Implementando a inclusão de objetos no bucket da Amazon S3
+- Desafio: Implementando a exclusão de objetos do bucket da Amazon S3
+- Implementando a recuperação de foto no serviço de storage do S3
+- Selecionando a implementação do serviço de storage de fotos
+
+# 15. E-mails transacionais e Domain Events 📧
+- Conhecendo soluções para envio de e-mails transacionais
+- Configurando o projeto para envio de e-mails usando servidor SMTP
+- Implementando o serviço de infraestrutura de envio de e-mails com Spring
+- Usando o serviço de envio de e-mails na confirmação de pedidos
+- Processando template do corpo de e-mails com Apache FreeMarker
+- Melhorando o texto do e-mail com FTL (FreeMarker Template Language)
+- Formatando valores monetários com FTL
+- Desafio: implementando serviço de envio de e-mail fake
+- Desafio: Implementando serviço de envio de e-mail sandbox
+- Conhecendo o padrão Domain Events do DDD
+- Publicando Domain Events a partir do Aggregate Root
+- Observando e reagindo a Domain Events
+- Reagindo a Domain Events em fases específicas da transação
+- Desafio: enviando e-mails no cancelamento de pedidos
+# 16. CORS e consumo da API com JavaScript e Java 🌐
+- Implementando uma chamada na REST API com JavaScript
+- Testando a requisição na API com JavaScript e entendendo a Same Origin Policy
+- Entendendo o funcionamento básico de CORS e habilitando na API
+- Habilitando CORS em controladores e métodos com @CrossOrigin
+- Entendendo o funcionamento de preflight do CORS
+- Habilitando CORS globalmente no projeto da API
+- Desafio: implementando uma requisição GET com JavaScript
+- Implementando um formulário de cadastro e fazendo requisição POST com JavaScript
+- Desafio: implementando uma requisição DELETE com JavaScript
+- Implementando um client da REST API com Java e Spring (RestTemplate)
+- Tratando respostas com código de erro no client Java
+- Desafio: Implementando uma requisição POST no client Java
+
+# 17. Cache de HTTP 📦
+- Introdução ao Cache de HTTP
+- Habilitando o cache com o cabeçalho Cache-Control e a diretiva max-age
+- Desafio: adicionando o cabeçalho Cache-Control na resposta
+- Entendendo a validação de representações em cache com ETags
+- Implementando requisições condicionais com Shallow ETags
+- Adicionando outras diretivas de Cache-Control na resposta HTTP
+- Usando a diretiva no-cache no cabeçalho Cache-Control da requisição
+- Entendendo e preparando a implementação de Deep ETags
+- Implementando requisições condicionais com Deep ETags
+- Desafio: implementando requisições condicionais com Deep ETags
+
+# 18. Documentação da API com OpenAPI, Swagger UI e SpringFox 📖
+- Introdução à documentação de REST APIs
+- Conhecendo a OpenAPI (antes conhecida como Swagger)
+- Gerando a definição OpenAPI em JSON com SpringFox
+- Gerando a documentação da API em HTML com Swagger UI e SpringFox
+- Selecionando os endpoints da API para gerar a documentação
+- Descrevendo informações da API na documentação
+- Descrevendo tags na documentação e associando com controllers
+- Descrevendo as operações de endpoints na documentação
+- Descrevendo parâmetros de entrada na documentação
+- Descrevendo modelos de representações e suas propriedades
+- Descrevendo restrições de validação de propriedades do modelo
+- Descrevendo códigos de status de respostas de forma global
+- Desafio: descrevendo códigos de status de respostas de forma global
+- Descrevendo o modelo de representação de problema
+- Referenciando modelo de representação de problema com códigos de status de erro
+- Descrevendo códigos de status de respostas em endpoints específicos
+- Desacoplando anotações do Swagger dos controladores
+- Desafio: descrevendo documentação de endpoints de grupos
+- Descrevendo media type da resposta nos endpoints
+- Corrigindo documentação com substituição de Pageable
+- Corrigindo documentação com substituição Page
+- Desafio: descrevendo documentação de endpoints de cozinhas
+- Ignorando tipos de parâmetros de operações na documentação
+- Desafio: descrevendo documentação de endpoints de formas de pagamento
+- Desafio: descrevendo documentação de endpoints de associação de restaurantes com formas de pagamento
+- Desafio: descrevendo documentação de endpoints de associação de restaurantes com usuários
+- Desafio: descrevendo documentação de endpoints de produtos
+- Desafio: descrevendo documentação de endpoints de fotos de produtos
+- Corrigindo documentação no Swagger UI para upload de arquivos
+- Desafio: descrevendo documentação de endpoints de associação de permissões com grupos
+- Desafio: descrevendo documentação de endpoints de usuários
+- Desafio: descrevendo documentação de endpoints de associação de grupos com usuários
+- Desafio: descrevendo documentação de endpoint de estatísticas
+
+
+# 19. Discoverability e HATEOAS: A Glória do REST 🌐
+- Introdução à Discoverability e HATEOAS
+- Adicionando a URI do recurso criado no header da resposta
+- Adicionando o Spring HATEOAS no projeto
+- Atualizando o projeto para Spring Boot 2.2 (Spring HATEOAS 1.0)
+- Resolvendo conflito de dependências com Spring HATEOAS e SpringFox
+- Conhecendo especificações para formatos Hypermedia
+- Adicionando hypermedia na representação de recurso único com HAL
+- Construindo links dinâmicos com WebMvcLinkBuilder
+- Construindo links que apontam para métodos
+- Adicionando hypermedia na representação de recursos de coleção
+- Montando modelo de representação com RepresentationModelAssembler
+- Desafio: adicionando hypermedia nos recursos de usuários
+- Corrigindo link de coleção de recurso de responsáveis por restaurante
+- Desafio: adicionando hypermedia nos recursos de estados
+- Adicionando hypermedia em recursos com paginação
+- Desafio: adicionando hypermedia em recursos de pedidos (paginação)
+- Corrigindo links de paginação com ordenação
+- Adicionando links com template variables
+- Desafio: adicionando template variables do filtro de pedidos
+- Refatorando construção e inclusão de links em representation model
+- Desafio: refatorando construção e inclusão de links
+- Adicionando links de transições de status de pedidos
+- Adicionando links condicionalmente
+- Desafio: adicionando hypermedia nos recursos de restaurantes
+- Desafio: adicionando links condicionais no recurso de restaurante
+- Desafio: adicionando template variable de projeção de restaurantes
+- Desafio: adicionando hypermedia nos recursos de formas de pagamento
+- Adicionando links para desassociação de formas de pagamento com restaurante
+- Adicionando links com template variable de caminho para associação de formas de pagamento com restaurante
+- Desafio: adicionando links de associação de restaurantes com responsáveis
+- Desafio: adicionando hypermedia nos recursos de produtos
+- Desafio: adicionando links para recurso de foto de produto
+- Desafio: adicionando hypermedia nos recursos de grupos
+- Desafio: adicionando links de associação de grupos com permissões
+- Desafio: adicionando links de associação de usuários com grupos
+- Implementando o Root Entry Point da API
+- Desafio: implementando endpoint com links de recursos de estatísticas
+- Comprimindo as respostas HTTP com Gzip
+- Corrigindo as propriedades de links na documentação
+- Corrigindo a documentação dos endpoints de cidades
+- Corrigindo a paginação na documentação
+- Desafio: corrigindo a documentação dos endpoints de estados
+- Desafio: corrigindo a documentação dos endpoints de formas de pagamento
+- Desafio: corrigindo a documentação dos endpoints de grupos
+- Desafio: corrigindo a documentação dos endpoint de pedidos (paginação)
+- Desafio: corrigindo a documentação dos endpoints de produtos
+- Desafio: corrigindo a documentação dos endpoints de restaurantes e usuários
+- Removendo modelo de representação inutilizado da documentação
+
+# 20. Evoluindo e versionando a API 🚀
+- Evoluindo a API com gestão de mudanças
+- Evitando quebrar os clientes: nova propriedade no modelo
+- Evitando quebrar os clientes: exclusão de propriedade do modelo
+- Evitando quebrar os clientes: alteração de tipo de propriedade do modelo
+- Evitando quebrar os clientes: alteração na estrutura de dados do modelo
+- Evitando quebrar os clientes: alteração de URL de recurso
+- O que é e quando versionar uma API?
+- As principais técnicas de versionamento de APIs
+- As principais abordagens para manter a base de código de APIs versionadas
+- Preparando o projeto para versionamento da API por Media Type
+- Implementando o versionamento da API por Media Type
+- Definindo a versão padrão da API quando o Media Type não é informado
+- Implementando o versionamento da API por URI
+- Desafio: Refatorando controladores para adicionar /v1 nas URIs
+- Desafio: adicionando os recursos de cozinhas na v2 da API
+- Gerando documentação das versões da API com SpringFox e Swagger UI
+- Desafio: revisando documentação da v2 da API
+- Depreciando uma versão da API
+- Desligando uma versão da API
+
+# 21. Logging 📜
+- Introdução ao Logback e SLF4J
+- Desafio: registrando logs de exceptions não tratadas
+- Criando uma conta no Loggly: serviço de gerenciamento de logs na nuvem
+- Configurando o appender do Loggly no Logback
+- Configurando o Logback para alternar as configurações por Spring Profiles
+
+# 22. Segurança com Spring Security e OAuth2 🔒
+- Introdução à segurança de REST APIs
+- Adicionando segurança na API com Spring Security
+- Configurando Spring Security com HTTP Basic
+- Configurando autenticação de usuários em memória
+- Introdução ao OAuth2
+- Soluções para OAuth2: nova stack do Spring Security vs Spring Security OAuth
+- Conhecendo o fluxo Resource Owner Password Credentials
+- Criando o projeto do Authorization Server com Spring Security OAuth2
+- Configurando o fluxo Authorization Server com Password Credentials e Opaque Tokens
+- Configurando o endpoint de introspecção de tokens no Authorization Server
+- Configurando o Resource Server com a nova stack do Spring Security
+- Conhecendo o fluxo para emitir e usar Refresh Tokens
+- Configurando o Refresh Token Grant Type no Authorization Server
+- Configurando a validade e não reutilização de Refresh Tokens
+- Conhecendo o fluxo Client Credentials
+- Configurando o Client Credentials Grant Type no Authorization Server
+- Revisando o fluxo Authorization Code
+- Configurando o Authorization Code Grant Type
+- Testando o fluxo Authorization Code com um client JavaScript
+- Conhecendo o fluxo Implicit
+- Configurando o fluxo Implicit Grant Type
+- Mais segurança com PKCE e Authorization Code Grant
+- Implementando o suporte a PKCE com o fluxo Authorization Code
+- Testando o fluxo Authorization Code com PKCE com o método plain
+- Testando o fluxo Authorization Code com PKCE com o método SHA-256
+- Testando um client JavaScript com PKCE e Authorization Code
+- Decidindo qual fluxo OAuth2 usar
+
+
+# 23. OAuth2 avançado com JWT e controle de acesso 🔐
+- Armazenando tokens no Redis: um banco de dados NoSQL
+- Configurando o RedisTokenStore
+- Entendendo a diferença entre Stateful e Stateless Authentication
+- Transparent Tokens: conhecendo o JSON Web Tokens (JWT)
+- Gerando JWT com chave simétrica (HMAC SHA-256) no Authorization Server
+- Configurando o Resource Server para JWT assinado com chave simétrica
+- Entendendo a diferença entre assinatura com chave simétrica e assimétrica
+- Gerando um par de chaves com keytool
+- Assinando o JWT com RSA SHA-256 (chave assimétrica)
+- Desafio: criando bean de propriedades de configuração do KeyStore
+- Extraindo a chave pública no formato PEM
+- Configurando a validação de JWT no Resource Server com a chave pública
+- Revisando o fluxo de aprovação do Authorization Code com JWT
+- Autenticando usuário com dados do banco de dados
+- Desafio: refatorando serviços de usuários para usar BCrypt
+- Adicionando claims customizadas no payload do JWT
+- Obtendo usuário autenticado no Resource Server
+- Definindo e criando as permissões de acesso
+- Carregando as permissões concedidas na autenticação
+- Carregando as Granted Authorities e restringindo acesso a endpoints na API
+- Method Security: Restringindo acesso com @PreAuthorize e SpEL
+- Desafio: tratando AccessDeniedException no ExceptionHandler
+- Simplificando o controle de acesso em métodos com meta-anotações
+- Entendendo os escopos do OAuth2
+- Carregando Granted Authorities dos escopos do OAuth2 no Resource Server
+- Restringindo acesso a endpoints por escopos do OAuth2
+- Desafio: restringindo acesso dos endpoints de restaurantes
+- Restringindo acessos de forma contextual (sensível à informação)
+- Restringindo acessos com @PostAuthorize
+- Desafio: restringindo acessos ao endpoint de pesquisa de pedidos
+- Desafio: restringindo acessos aos endpoints de transição de status de pedidos
+- Desafio: restringindo acessos aos endpoints de formas de pagamentos
+- Desafio: restringindo acessos aos endpoints de cidades e estados
+- Desafio: restringindo acessos aos endpoints de usuários, grupos e permissões
+- Desafio: restringindo acessos aos endpoints de estatísticas
+- Configurando os clientes OAuth2 em um banco de dados SQL
+- Cadastrando clientes OAuth2 no banco de dados e testando a emissão de tokens
+- Corrigindo lógica de restrição de acessos para Client Credentials Flow
+- Gerando links do HAL dinamicamente de acordo com permissões do usuário
+- Desafio: gerando links do HAL dinamicamente de acordo com permissões
+- Juntando o Resource Server com o Authorization Server no mesmo projeto
+- Ajustando a documentação da API para suporte a OAuth2
+- Customizando a página de login
+- Customizando a página de OAuth2 Approval
+- Implementando o endpoint do JSON Web Key Set (JWKS)
+- Externalizando o KeyStore: criando um ProtocolResolver para Base64
+
+# 24. Dockerizando a aplicação 🐳
+- Conhecendo o Docker
+- Instalando o Docker
+- Executando um container
+- Gerenciando melhor os containers
+- Conhecendo a arquitetura do Docker
+- Entendendo o que são as imagens e o Docker Hub
+- Gerenciando imagens
+- Executando um container do MySQL
+- Construindo a imagem da aplicação com Dockerfile
+- Criando uma network e conectando dois containers
+- Construindo a imagem Docker pelo Maven
+- Disponibilizando a imagem da aplicação no Docker Hub
+- Conhecendo e usando Docker Compose
+- Controlando a ordem de inicialização com wait-for-it.sh
+- Escalando um serviço com Docker Compose
+- Entendendo o Poor Man's Load Balancer (DNS Round Robin)
+- Configurando um proxy reverso com Nginx
+- Configurando o Spring Session com Redis
+- Resolvendo problemas com storage de Authorization Codes
+- Configurando o Spring Session Data Redis
+- Resolvendo problemas com storage de Authorization Codes
+
+# 25. Deploy em containers Docker na Amazon ☁️
+- Introdução ao deployment em produção
+- Mais organização das propriedades do projeto com Spring Profiles
+- Dependência de JavaMailSender não satisfeita: melhorando o uso da herança
+- Conhecendo a Amazon Web Services (AWS)
+- Entendendo alguns conceitos fundamentais da nuvem da AWS
+- Monitorando e criando um alerta de orçamento da AWS
+- Criando o bucket no Amazon S3
+- Criando uma instância do MySQL no Amazon RDS
+- Criando schema e usuário da aplicação
+- Conhecendo e criando uma conta no Redislabs
+- Criando uma instância do Redis na nuvem
+- Conhecendo o Amazon Elastic Container Service (ECS) e AWS Fargate
+- Publicando um container no Amazon ECS
+- Subindo a imagem Docker para o Amazon Elastic Container Registry (ECR)
+- Organizando as variáveis de ambiente do container da aplicação
+- Gerenciando as configurações com AWS Systems Manager Parameter Store
+- Configurando Amazon ECS para rodar nossa aplicação
+- Permitindo a leitura de parâmetros do Parameter Store pelo serviço do Amazon ECS
+- Permitindo o acesso ao MySQL pelo Security Group do serviço do Amazon ECS
+- Inserindo dados no banco de dados de produção
+- Conhecendo o Elastic Load Balancing da Amazon
+- Configurando e provisionando um Load Balancer na Amazon
+- Configurando o balanceamento de carga no serviço do Amazon ECS
+- Registrando um domínio de internet no Registro.br
+- Configurando o domínio para o Application Load Balancer
+- Configurando certificado TLS (HTTPS) com AWS Certificate Manager
+- Configurando o protocolo HTTPS nos links da API com HATEOAS
+- Testando a API em produção
+- Conclusão e próximos passos
+
+
