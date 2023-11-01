@@ -1,3 +1,8 @@
+## Estrutura do Repositório ⚠️
+
+Este repositório é organizado de modo a refletir o meu progresso e aprendizado ao longo do curso de Spring Boot. Cada conceito ou tópico que eu estudo é representado por uma branch separada. Isso me ajuda a manter o código organizado e permite o acompanhamehnto do meu progresso e a evolução dos conceitos.
+Na branch main ficará apenas o projeto principal do curso.
+
 # Ementa do Curso de Spring Framework
 
 ## 1. Introdução 🌱
@@ -549,5 +554,8 @@
 - Configurando o protocolo HTTPS nos links da API com HATEOAS
 - Testando a API em produção
 - Conclusão e próximos passos
+
+
+
 
 
