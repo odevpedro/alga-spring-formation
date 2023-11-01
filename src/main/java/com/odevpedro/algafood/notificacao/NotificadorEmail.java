@@ -5,7 +5,7 @@ import org.springframework.stereotype.Component;
 
 import java.util.Locale;
 
-public class NotificadorEmail implements Notificador{
+public class NotificadorEmail implements Notificador {
 
     private boolean caixaAlta;
     private String hostServidorSmtp;

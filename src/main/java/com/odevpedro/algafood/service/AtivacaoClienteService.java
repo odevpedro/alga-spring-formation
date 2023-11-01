@@ -12,11 +12,11 @@ public class AtivacaoClienteService {
     public AtivacaoClienteService(Notificador notificador){
         this.notificador = notificador;
 
-        System.out.println("caralho" + notificador);
+        System.out.println("something" + notificador);
     }
     public void ativar(Cliente cliente){
         cliente.ativar();
-        this.notificador.notificar(cliente, "Seu cadastro está ativo");
+        notificador.notificar(cliente, "Seu cadastro está ativo");
 
     }
 }

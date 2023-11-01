@@ -13,6 +13,8 @@ public class Main {
 
 
         Notificador notificador = new NotificadorSMS();
+
+
         AtivacaoClienteService ativacaoCliente = new AtivacaoClienteService(notificador);
         ativacaoCliente.ativar(maria);
         ativacaoCliente.ativar(joao);
