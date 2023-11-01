@@ -17,7 +17,7 @@ public class EmissaoNotaFiscalService {
                 "foi emitida");
         //Emite nota fiscal ...
 
-        NotificadorEmail notificador = new NotificadorEmail("s");
+        NotificadorEmail notificador = new NotificadorEmail();
         notificador.notificar(cliente, "Nota fiscal do produto" + produto.getNome() + "foi emitida");
 
         //simplesmente seguir o contrato da

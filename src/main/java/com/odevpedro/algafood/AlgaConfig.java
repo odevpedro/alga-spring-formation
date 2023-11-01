@@ -8,8 +8,7 @@ import org.springframework.context.annotation.Configuration;
 public class AlgaConfig {
     @Bean
     public NotificadorEmail notificadorEmail(){
-        NotificadorEmail notificador = new NotificadorEmail("smtp.algamail.com.br");
-        notificador.setCaixaAlta(true);
+        NotificadorEmail notificador = new NotificadorEmail();
 
         return notificador;
     }
