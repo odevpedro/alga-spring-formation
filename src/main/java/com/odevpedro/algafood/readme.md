@@ -38,7 +38,7 @@ Basicamente, as APIs REST atendem às especificações do protocolo HTTP. 🔄
 
 O ecossistema Spring é maior que o Spring Boot.
 
-## Tópicos Adicionais 📚
+## Tópicos Importantes 📚
 
 Aqui estão alguns tópicos adicionais relacionados ao Spring Framework:
 
@@ -59,5 +59,3 @@ Aqui estão alguns tópicos adicionais relacionados ao Spring Framework:
 - **Spring Boot Starter Packs 🚀**: Os *starter packs* do Spring Boot simplificam a configuração de aplicativos para tarefas comuns.
 
 - **Microsserviços com Spring Cloud ☁️**: O ecossistema Spring inclui o Spring Cloud, que facilita a construção de microsserviços.
-
-Estes tópicos complementam a compreensão do Spring Framework e podem ser explorados em detalhes, dependendo das necessidades do seu projeto. 😊🌱
