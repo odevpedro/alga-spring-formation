@@ -12,7 +12,7 @@ public class Main {
         Cliente maria = new Cliente("João", "joao@xyz.com", "0980432");
 
 
-        Notificador notificador = new NotificadorEmail();
+        Notificador notificador = new NotificadorEmail("smptpath");
 
 
         AtivacaoClienteService ativacaoCliente = new AtivacaoClienteService(notificador);

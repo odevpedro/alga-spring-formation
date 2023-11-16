@@ -3,18 +3,25 @@ package com.odevpedro.algafood.notificacao;
 import com.odevpedro.algafood.model.Cliente;
 import org.springframework.stereotype.Component;
 
-import java.util.Locale;
 
-@Component
-public class NotificadorEmail implements Notificador{
+public class NotificadorEmail implements Notificador {
+    private boolean caixaAlta;
+    private String hostServidorSMTP;
 
-
-    public NotificadorEmail(){
-        System.out.println("Construtor notificadorEmail chamado");
+    public NotificadorEmail(String hostServidorSMTP) {
+        this.hostServidorSMTP = hostServidorSMTP;
+        System.out.println("Construtor NotificadorEmail chamado");
     }
 
     public void notificar(Cliente cliente, String mensagem) {
-            System.out.printf("Notficando %s através do email, usando SMPT",
-                    cliente.getNome(), cliente.getEmail(), mensagem);
+        if (this.caixaAlta) {
+            mensagem = mensagem.toUpperCase();
         }
+        System.out.printf("Notificando %s através do email %s usando SMTP %s: %s\n",
+                cliente.getNome(), cliente.getEmail(), this.hostServidorSMTP, mensagem);
+    }
+
+    public void setCaixaAlta(boolean caixaAlta) {
+        this.caixaAlta = caixaAlta;
+    }
 }

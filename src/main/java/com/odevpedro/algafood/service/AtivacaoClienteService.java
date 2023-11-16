@@ -5,7 +5,7 @@ import com.odevpedro.algafood.notificacao.Notificador;
 import com.odevpedro.algafood.notificacao.NotificadorEmail;
 import org.springframework.stereotype.Component;
 
-@Component
+
 public class AtivacaoClienteService {
 
     private Notificador notificador;
