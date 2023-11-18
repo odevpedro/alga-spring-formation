@@ -13,3 +13,7 @@ public class AtivacaoClienteService {
     }
 }
 
+
+
+Outra forma é conceder uma maior prioridade a um bean com a notação
+@Primary

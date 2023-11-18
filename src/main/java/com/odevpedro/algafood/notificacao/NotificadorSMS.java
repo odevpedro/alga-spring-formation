@@ -1,9 +1,11 @@
 package com.odevpedro.algafood.notificacao;
 
 import com.odevpedro.algafood.model.Cliente;
+import org.springframework.context.annotation.Primary;
 import org.springframework.stereotype.Component;
 
 @Component
+@Primary
 public class NotificadorSMS implements Notificador{
 
     @Override
