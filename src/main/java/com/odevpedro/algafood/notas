@@ -1,2 +1,12 @@
-spirng.profiles: É útil quando queremos que a nossa aplicação se comporte de maneira diferente dependendo do ambiente
-Colocamos a notação @Profile("prod") e caso não estejamos executando no ambiente de produção, nosso objeto não é instanciado
+Ciclo de vida do Spring:
+
+- Inicialização
+- uso
+- destruição
+
+
+podemos implementar métodos de callback desses status do ciclo de vida dos beans
+provavelmente vai ser útil para conseguirmos informações de QUANDO certo bean está em
+determinado status.
+
+
