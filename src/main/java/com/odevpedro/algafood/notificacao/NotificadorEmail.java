@@ -1,12 +1,16 @@
 package com.odevpedro.algafood.notificacao;
 
 import com.odevpedro.algafood.model.Cliente;
+import org.springframework.context.annotation.Bean;
 import org.springframework.stereotype.Component;
 
 
+@Component
 public class NotificadorEmail implements Notificador {
     private boolean caixaAlta;
     private String hostServidorSMTP;
+
+    public  NotificadorEmail(){}
 
     public NotificadorEmail(String hostServidorSMTP) {
         this.hostServidorSMTP = hostServidorSMTP;

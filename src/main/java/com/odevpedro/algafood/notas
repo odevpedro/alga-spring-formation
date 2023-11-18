@@ -1,0 +1,15 @@
+O problema de ambiguidade de beans ocorre quando o spring não tem insumos para decidir qual bean será injetado num determinado contexto.
+Essa é uma das formas de fazer a desambiguação de beans
+@Component
+public class AtivacaoClienteService {
+    @Autowired
+    private List<Notificador> notificadores;
+
+    public void ativar(Cliente cliente){
+        cliente.ativar();
+        for (Notificador notifcador: notificadores){
+           notifcador.notificar(cliente, "Seu cadastro no sistema está ativo");
+        }
+    }
+}
+
