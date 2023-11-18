@@ -15,7 +15,7 @@ public class Main {
         Notificador notificador = new NotificadorEmail("smptpath");
 
 
-        AtivacaoClienteService ativacaoCliente = new AtivacaoClienteService(notificador);
+        AtivacaoClienteService ativacaoCliente = new AtivacaoClienteService();
         ativacaoCliente.ativar(maria);
         ativacaoCliente.ativar(joao);
     }

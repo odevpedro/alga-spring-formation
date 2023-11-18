@@ -4,7 +4,7 @@ import com.odevpedro.algafood.model.Cliente;
 import org.springframework.context.annotation.Bean;
 import org.springframework.stereotype.Component;
 
-
+@TipoDoNotificador(NivelUrgencia.NORMAL)
 @Component
 public class NotificadorEmail implements Notificador {
     private boolean caixaAlta;
