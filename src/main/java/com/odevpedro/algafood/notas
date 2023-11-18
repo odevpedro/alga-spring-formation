@@ -1,25 +1,2 @@
-O problema de ambiguidade de beans ocorre quando o spring não tem insumos para decidir qual bean será injetado num determinado contexto.
-Essa é uma das formas de fazer a desambiguação de beans
-@Component
-public class AtivacaoClienteService {
-    @Autowired
-    private List<Notificador> notificadores;
-
-    public void ativar(Cliente cliente){
-        cliente.ativar();
-        for (Notificador notifcador: notificadores){
-           notifcador.notificar(cliente, "Seu cadastro no sistema está ativo");
-        }
-    }
-}
-
-
-
-Outra forma é conceder uma maior prioridade a um bean com a notação
-@Primary
-
-
-Com ele podemos qualificar nosso componente, passando um identificador
-Outra forma é usando o @Qualifier("name")
-
-anotação customizada
+spirng.profiles: É útil quando queremos que a nossa aplicação se comporte de maneira diferente dependendo do ambiente
+Colocamos a notação @Profile("prod") e caso não estejamos executando no ambiente de produção, nosso objeto não é instanciado
