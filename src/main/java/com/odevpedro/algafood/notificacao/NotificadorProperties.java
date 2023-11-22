@@ -7,16 +7,16 @@ import org.springframework.stereotype.Component;
 @Component
 @ConfigurationProperties("notificador.email")
 public class NotificadorProperties {
-    private String hsotServidor;
+    private String hostServidor;
     private Integer portaServidor;
 
 
-    public String getHsotServidor() {
-        return hsotServidor;
+    public String getHostServidor() {
+        return hostServidor;
     }
 
-    public void setHsotServidor(String hsotServidor) {
-        this.hsotServidor = hsotServidor;
+    public void setHostServidor(String hsotServidor) {
+        this.hostServidor = hsotServidor;
     }
 
     public Integer getPortaServidor() {

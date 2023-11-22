@@ -1,12 +1,8 @@
-Ciclo de vida do Spring:
+Os profiles que especifcamos nos properties são utéis para mudarmos o comportamento da nossa aplicação
+tomando como critério o ambiente especificado. Na pratica como isso funciona???
 
-- Inicialização
-- uso
-- destruição
+- Objetos/componentes spring deixam de ser instanciados , mandandos para o contexto do framework
 
-
-podemos implementar métodos de callback desses status do ciclo de vida dos beans
-provavelmente vai ser útil para conseguirmos informações de QUANDO certo bean está em
-determinado status.
-
-
+- Como é possivel obter os valores que estão no meu properties através da clase NotificadorProperties?
+isso é possivel graças a notação: ConfigurationProperties que especifica -> notificador.email (prefixo)
+que antecede o "portaServidor" e "hostServidor"

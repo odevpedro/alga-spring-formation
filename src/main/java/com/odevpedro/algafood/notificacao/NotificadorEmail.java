@@ -19,7 +19,7 @@ public class NotificadorEmail implements Notificador {
 
         @Override
         public void notificar(Cliente cliente, String mensagem) {
-            System.out.println("Host " + properties.getHsotServidor());
+            System.out.println("Host " + properties.getHostServidor());
             System.out.println("Porta " + properties.getPortaServidor());
             System.out.println("Notificador Email REAL");
             System.out.printf("Notificando %s através do email %s usando SMTP: %s\n",
