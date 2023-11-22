@@ -8,32 +8,22 @@ import com.odevpedro.algafood.notificacao.TipoDoNotificador;
 import jakarta.annotation.PostConstruct;
 import jakarta.annotation.PreDestroy;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.ApplicationEventPublisher;
 import org.springframework.stereotype.Component;
 
 import java.lang.ref.Cleaner;
 import java.util.List;
 
 
+@Component
 public class AtivacaoClienteService {
 
-    @TipoDoNotificador(NivelUrgencia.NAO_URGENTE)
     @Autowired
-    private Notificador notificador;
-
-    //@PostConstruct
-    public void init(){
-        System.out.println("INIT" + notificador);
-    }
-
-    //@PreDestroy
-    public void destroy(){
-        System.out.println("DESTROY");
-    }
+    private ApplicationEventPublisher eventPublisher;
 
     public void ativar(Cliente cliente){
             cliente.ativar();
-            notificador.notificar(cliente, "Seu cadastro no sistema está ativo");
-
+            eventPublisher.publishEvent(new ClienteAtivadoEvent(cliente));
         }
 
     }
