@@ -1,8 +1,84 @@
-Os profiles que especifcamos nos properties são utéis para mudarmos o comportamento da nossa aplicação
-tomando como critério o ambiente especificado. Na pratica como isso funciona???
+Que problema o JPA resolve?
+Para entendermos como funciona o JPA e saber que problemas ele se propôs a resolver na sua criação é interessante darmos um passo para trás e olharmos com calma para o JDBC. O JDBC é basicamente um conjunto de classes e interfaces que nos permitem o envio de instruções SQL a qualquer banco de dados relacional. Uma definição mais formal seria:
 
-- Objetos/componentes spring deixam de ser instanciados , mandandos para o contexto do framework
+API baseada em interfaces, representada pelo pacote java.sql.* que nos permite fazer comunicação com o banco de dados. O jdbc é uma abstração entre as aplicações java e os drives de conexão com os bancos de dados. A interface Connection nos permite passar as informações de conexão com o banco de dados. O jdbc redireciona da forma mais adequada os comandos para os drives
 
-- Como é possivel obter os valores que estão no meu properties através da clase NotificadorProperties?
-isso é possivel graças a notação: ConfigurationProperties que especifica -> notificador.email (prefixo)
-que antecede o "portaServidor" e "hostServidor"
+
+
+PERGUNTAS
+
+O que é persistência de dados?
+Termo utilizado para dizermos que queremos preservar os dados por um tempo além da utilização do software.
+
+persistencia de dados com java consciste na intermediação que o jdbc faz com o sql
+
+ O jdbc não oferece a opção a ORM, Fazer o mapeamento, conversão do objeto relacional é o que nos faz gastar tempo.
+
+ depara entre a composição de um objeto com uma tabela no banco de dados
+Na prática é uma automatização dos processos referentes a integração com o banco de dados. Ou seja: todo aquele processo árduo feito no JDBC é abstraído de forma simples pelo JPA
+
+Através do JDBC toda a responsabilidade de comunicação com o banco de dados fica a cargo do Data Acess Object (DAO) — sendo um padrão de projeto java.
+utilidades:
+
+- fazer esse mapeamento objeto relacional
+
+
+
+
+
+
+🗃️ Persistence.xml → Unidade de persistência. O JPA é configurado a partir das especificações contidas nesse arquivo. → Configuração de acesso ao banc
+
+
+
+
+
+Exemplo de código em JDBC e a comparação com o JPA:
+
+
+
+package br.com.alura.jdbc.modelo;
+
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.SQLException;
+
+public class ContaDao {
+	private Connection cnn;
+
+	public ContaDao() {
+		try {
+			this.cnn = DriverManager.getConnection("mysql://localhost/alura_jdbc", "root", "");
+		} catch (SQLException e) {
+			throw new RuntimeException(e);
+		}
+	}
+
+	public void adiciona(Conta conta) {
+		try {
+			String sql = "insert into conta(agencia, numero, titular) values (?,?,?)";
+			PreparedStatement ps = cnn.prepareStatement(sql);
+			//As trẽs linhas abaixos inserem os valores
+			ps.setLong(1, conta.getAgencia());
+			ps.setLong(2, conta.getNumero());
+			ps.setString(3, conta.getTitular());
+
+			ps.execute();
+		} catch (SQLException e) {
+			throw new RuntimeException(e);
+		}
+	}
+}
+
+
+
+
+Antes do jdbc a conexão feita através de sockets de forma manual.
+O jdbc é a técnologia padrão do java fazer acesso a BD relacionais.
+O jdbc veio como uma camada de abstração para que fosse acessada independente do DB e protocolo.
+
+
+É necessário um drive do Banco de dados que é um jar. Para cada banco de dados temos um driver. O driver permite
+essa comunicação é uma interface que através da tradução de protocolos passando do java para o sgbd
+Mas o código que faz a comunicação continua o mesmo.
