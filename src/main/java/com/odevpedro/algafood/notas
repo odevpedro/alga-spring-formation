@@ -1,7 +1,2 @@
-agregate = grupo de dominios que podem ser tratados como uma única unidade
-
-agregate root = raiz do agregado, no nosso caso temos pedido e itemPedido dentro de um agregado,
-sendo o Pedido o pai.
-
-referência:
-https://martinfowler.com/bliki/DDD_Aggregate.html
+Repository: vem do dddd camada de abstração para acesso a dados,
+quem usa o repository não precisa saber o mecanismo de busca que é implementado

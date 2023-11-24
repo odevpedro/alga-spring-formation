@@ -2,6 +2,7 @@ package com.odevpedro.algafood.jpa;
 
 import com.odevpedro.algafood.AlgafoodApplication;
 import com.odevpedro.algafood.domain.model.Cozinha;
+import com.odevpedro.algafood.domain.repository.CozinhaRepository;
 import org.springframework.boot.WebApplicationType;
 import org.springframework.boot.builder.SpringApplicationBuilder;
 import org.springframework.context.ApplicationContext;
@@ -12,15 +13,15 @@ public class InclusaoCozinhaMain {
                 .web(WebApplicationType.NONE)
                 .run(args);
 
-        CadastroCozinha cadastroCozinha = applicationContext.getBean(CadastroCozinha.class);
+        CozinhaRepository cadastroCozinha = applicationContext.getBean(CozinhaRepository.class);
         Cozinha cozinha1 = new Cozinha();
         Cozinha cozinha2 = new Cozinha();
 
         cozinha1.setNome("Brasileira");
         cozinha2.setNome("Japonesa");
 
-        cadastroCozinha.adicionar(cozinha1);
-        cadastroCozinha.adicionar(cozinha2);
+        cadastroCozinha.salvar(cozinha1);
+        cadastroCozinha.salvar(cozinha2);
 
 
     }
