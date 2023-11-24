@@ -1,3 +1,7 @@
-Gerar as tabelas partindo dos nomes dados as notações é interessante somente em desenvolvimento.
+agregate = grupo de dominios que podem ser tratados como uma única unidade
 
-spring.jpa.hibernate.ddl-auto=update - script de criação automática da tabela
+agregate root = raiz do agregado, no nosso caso temos pedido e itemPedido dentro de um agregado,
+sendo o Pedido o pai.
+
+referência:
+https://martinfowler.com/bliki/DDD_Aggregate.html
