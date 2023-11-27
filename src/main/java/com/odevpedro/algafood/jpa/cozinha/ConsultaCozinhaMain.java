@@ -1,28 +1,27 @@
-package com.odevpedro.algafood.jpa;
+package com.odevpedro.algafood.jpa.cozinha;
 
 import com.odevpedro.algafood.AlgafoodApplication;
 import com.odevpedro.algafood.domain.model.Cozinha;
 import com.odevpedro.algafood.domain.repository.CozinhaRepository;
+import org.springframework.boot.SpringApplication;
 import org.springframework.boot.WebApplicationType;
 import org.springframework.boot.builder.SpringApplicationBuilder;
 import org.springframework.context.ApplicationContext;
+import org.springframework.context.ApplicationEventPublisher;
 
-public class InclusaoCozinhaMain {
+import java.util.List;
+
+public class ConsultaCozinhaMain {
     public static void main(String[] args) {
         ApplicationContext applicationContext = new SpringApplicationBuilder(AlgafoodApplication.class)
                 .web(WebApplicationType.NONE)
                 .run(args);
 
         CozinhaRepository cadastroCozinha = applicationContext.getBean(CozinhaRepository.class);
-        Cozinha cozinha1 = new Cozinha();
-        Cozinha cozinha2 = new Cozinha();
+        List<Cozinha> cozinhas = cadastroCozinha.listar();
 
-        cozinha1.setNome("Brasileira");
-        cozinha2.setNome("Japonesa");
-
-        cadastroCozinha.salvar(cozinha1);
-        cadastroCozinha.salvar(cozinha2);
-
-
+        for (Cozinha cozinha: cozinhas){
+            System.out.println(cozinha.getNome());
+        }
     }
 }
