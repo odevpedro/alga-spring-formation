@@ -1,13 +1,11 @@
-package com.odevpedro.algafood.jpa.cozinha;
+package com.odevpedro.algafood.jpa;
 
 import com.odevpedro.algafood.AlgafoodApplication;
 import com.odevpedro.algafood.domain.model.Cozinha;
 import com.odevpedro.algafood.domain.repository.CozinhaRepository;
-import org.springframework.boot.SpringApplication;
 import org.springframework.boot.WebApplicationType;
 import org.springframework.boot.builder.SpringApplicationBuilder;
 import org.springframework.context.ApplicationContext;
-import org.springframework.context.ApplicationEventPublisher;
 
 import java.util.List;
 
@@ -17,8 +15,8 @@ public class ConsultaCozinhaMain {
                 .web(WebApplicationType.NONE)
                 .run(args);
 
-        CozinhaRepository cadastroCozinha = applicationContext.getBean(CozinhaRepository.class);
-        List<Cozinha> cozinhas = cadastroCozinha.listar();
+        CozinhaRepository cozinhaRepository = applicationContext.getBean(CozinhaRepository.class);
+        List<Cozinha> cozinhas = cozinhaRepository.findAll();
 
         for (Cozinha cozinha: cozinhas){
             System.out.println(cozinha.getNome());

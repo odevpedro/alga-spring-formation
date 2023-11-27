@@ -1,4 +1,4 @@
-package com.odevpedro.algafood.jpa.cozinha;
+package com.odevpedro.algafood.jpa;
 
 import com.odevpedro.algafood.AlgafoodApplication;
 import com.odevpedro.algafood.domain.model.Cozinha;
@@ -16,7 +16,6 @@ public class ExclusãoCozinhaMain {
         CozinhaRepository cadastroCozinha = applicationContext.getBean(CozinhaRepository.class);
         Cozinha cozinha = new Cozinha();
         cozinha.setId(1L);
-        cadastroCozinha.remover(cozinha);
 
 
 

@@ -5,26 +5,10 @@ import com.odevpedro.algafood.domain.repository.CozinhaRepository;
 import org.springframework.stereotype.Component;
 
 import java.util.List;
+import java.util.Optional;
 
 @Component
-public class CozinhaInfraestructureImpl implements CozinhaRepository {
-    @Override
-    public List<Cozinha> listar() {
-        return null;
-    }
+public class CozinhaInfraestructureImpl {
 
-    @Override
-    public Cozinha buscar(Long id) {
-        return null;
-    }
 
-    @Override
-    public Cozinha salvar(Cozinha cozinha) {
-        return null;
-    }
-
-    @Override
-    public void remover(Cozinha cozinha) {
-
-    }
 }

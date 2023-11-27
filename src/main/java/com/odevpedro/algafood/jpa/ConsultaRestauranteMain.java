@@ -1,25 +1,29 @@
-package com.odevpedro.algafood.jpa.restaurante;
+package com.odevpedro.algafood.jpa;
 
 import com.odevpedro.algafood.AlgafoodApplication;
 import com.odevpedro.algafood.domain.model.Cozinha;
 import com.odevpedro.algafood.domain.model.Restaurante;
+import com.odevpedro.algafood.domain.repository.CozinhaRepository;
 import com.odevpedro.algafood.domain.repository.RestauranteRepository;
 import org.springframework.boot.WebApplicationType;
 import org.springframework.boot.builder.SpringApplicationBuilder;
 import org.springframework.context.ApplicationContext;
 
-public class AlteracaoRestauranteMain {
+import java.util.List;
+
+public class ConsultaRestauranteMain {
     public static void main(String[] args) {
         ApplicationContext applicationContext = new SpringApplicationBuilder(AlgafoodApplication.class)
                 .web(WebApplicationType.NONE)
                 .run(args);
 
-        RestauranteRepository cadastroRestaurante = applicationContext.getBean(RestauranteRepository.class);
-        Restaurante restaurante = new Restaurante();
-        restaurante.setId(1L);
-        restaurante.setNome("Brasileira");
-        cadastroRestaurante.salvar(restaurante);
+        RestauranteRepository restauranteRepository = applicationContext.getBean(RestauranteRepository.class);
+        List<Restaurante> restaurantes = restauranteRepository.listar();
 
+        for (Restaurante restaurante: restaurantes){
+            System.out.printf("%s - %f - %s", restaurante.getNome(),
+            restaurante.getTaxaFrete(), restaurante.getCozinha().getNome());
 
+        }
     }
 }
