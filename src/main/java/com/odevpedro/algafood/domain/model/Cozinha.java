@@ -1,5 +1,8 @@
 package com.odevpedro.algafood.domain.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonRootName;
 import jakarta.persistence.*;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
@@ -9,6 +12,7 @@ import lombok.Setter;
 
 import java.util.Objects;
 
+@JsonRootName("gastronomia")
 @Entity
 @Getter
 @Setter
@@ -18,8 +22,10 @@ public class Cozinha {
     @EqualsAndHashCode.Include
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @JsonIgnore
     private Long id;
 
+    
     @Column(length = 30)
     private String nome;
 
